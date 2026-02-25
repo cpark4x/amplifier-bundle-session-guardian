@@ -1,0 +1,20 @@
+bundle:
+  name: session-guardian-behavior
+  version: 1.0.0
+  description: Automatic session scope management with token tracking and state handoff
+
+hooks:
+  - module: session-guardian
+    source: session-guardian:modules/session-guardian
+    config:
+      context_window: 200000
+      soft_threshold: 0.60
+      hard_threshold: 0.80
+
+tools:
+  - module: tool-session-state
+    source: session-guardian:modules/tool-session-state
+
+context:
+  include:
+    - session-guardian:context/session-guardian-protocol.md
