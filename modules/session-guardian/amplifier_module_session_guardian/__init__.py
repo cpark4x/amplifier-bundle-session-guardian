@@ -54,7 +54,7 @@ def _extract_tokens(usage: Any) -> tuple[int, int]:
         return 0, 0
 
 
-async def _handle_response(tracker: TokenTracker, data: dict[str, Any]) -> HookResult:
+async def _handle_response(tracker: TokenTracker, event: str, data: dict[str, Any]) -> HookResult:
     """provider:response — record token usage from the model response."""
     try:
         usage = data.get("usage")
@@ -78,7 +78,7 @@ async def _handle_response(tracker: TokenTracker, data: dict[str, Any]) -> HookR
     return HookResult(action="continue")
 
 
-async def _handle_request(tracker: TokenTracker, data: dict[str, Any]) -> HookResult:
+async def _handle_request(tracker: TokenTracker, event: str, data: dict[str, Any]) -> HookResult:
     """provider:request — inject context budget status into the prompt."""
     try:
         pct = tracker.usage_pct
@@ -135,13 +135,13 @@ async def mount(coordinator: Any, config: dict[str, Any] | None = None) -> Calla
 
     unreg_response = coordinator.hooks.register(
         "provider:response",
-        lambda data: _handle_response(tracker, data),
+        lambda event, data: _handle_response(tracker, event, data),
         priority=10,
         name="guardian_tracker",
     )
     unreg_request = coordinator.hooks.register(
         "provider:request",
-        lambda data: _handle_request(tracker, data),
+        lambda event, data: _handle_request(tracker, event, data),
         priority=5,
         name="guardian_injector",
     )
