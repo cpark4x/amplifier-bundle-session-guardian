@@ -5,7 +5,7 @@ bundle:
 
 hooks:
   - module: session-guardian
-    source: session-guardian:modules/session-guardian
+    source: git+https://github.com/cpark4x/amplifier-bundle-session-guardian@main#subdirectory=modules/session-guardian
     config:
       context_window: 200000
       soft_threshold: 0.60
@@ -13,7 +13,7 @@ hooks:
 
 tools:
   - module: tool-session-state
-    source: session-guardian:modules/tool-session-state
+    source: git+https://github.com/cpark4x/amplifier-bundle-session-guardian@main#subdirectory=modules/tool-session-state
 
 context:
   include:
