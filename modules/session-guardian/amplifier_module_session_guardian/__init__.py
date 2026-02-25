@@ -6,6 +6,8 @@ Registers two hooks:
 """
 from __future__ import annotations
 
+__amplifier_module_type__ = "hook"
+
 import logging
 from typing import Any, Callable
 
