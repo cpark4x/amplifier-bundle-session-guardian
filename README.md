@@ -1,6 +1,6 @@
 # amplifier-bundle-session-guardian
 
-Automatic session scope management for [Amplifier](https://github.com/robotdad/amplifier).
+Automatic session scope management for [Amplifier](https://github.com/microsoft/amplifier).
 
 Tracks token pressure in real time, saves session state proactively, and enables clean handoff between sessions. Compose into any bundle — runs invisibly until it matters.
 
@@ -49,3 +49,12 @@ Session state is saved to `.session-state/` in the working directory as timestam
 ## License
 
 MIT
+
+---
+
+## Built by
+
+**Chris Park** — Senior PM, Microsoft Office of the CTO, AI Incubation group.
+Engineering degree from Waterloo. 17 years shipping product.
+
+[LinkedIn](https://www.linkedin.com/in/chrispark1/) · [GitHub](https://github.com/cpark4x)
