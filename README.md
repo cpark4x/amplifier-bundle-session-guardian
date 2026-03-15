@@ -1,8 +1,8 @@
 # amplifier-bundle-session-guardian
 
-Automatic session scope management for [Amplifier](https://github.com/robotdad/amplifier).
+**You're 90 minutes into a complex session and the AI starts forgetting what you discussed an hour ago.** Context filled up. Work is lost. You start over.
 
-Tracks token pressure in real time, saves session state proactively, and enables clean handoff between sessions. Compose into any bundle — runs invisibly until it matters.
+Session Guardian tracks token pressure in real time, saves state proactively, and hands off cleanly to a new session before things degrade. Compose into any bundle — runs invisibly until it matters.
 
 ## Install
 
